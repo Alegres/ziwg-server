@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<head>
+	<title>Arduino</title>
+	{% load static %}
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static '/ard.css' %}">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<header>
+		<nav class="navbar" style="color:red" > <!--<nav class="navbar navbar-expand-sm navbar-dark bg-dark"></nav>-->
+		<div class="container">
+			<a class="navbar-brand" href="{% url 'home' %}"style="color:red;margin-left:40%;margin-right:auto;font-size:30px;position:absolute;top:3%" >Arduino</a>
+			{% if user.is_authenticated %}
+            <div id="dropdown" class="ddmenu"style="margin-right:20px">
+	<div style="float:left;margin-top:8px">
+				  <b style="font-size:100%; position:absolute;top:0;
+   left:0;">{{user.username}}:</b>
+			</div>
+      	<ul class="menu" style="position:absolute;top:4%;
+   left:8%;">
+        <li><a href="{% url 'logout' %}"style="color:red;font-size:120%">Logout</a></li>
+        <li><a href="{% url 'profile' %}"style="color:red;font-size:120%">Your profile</a></li>
+			      </ul>
+    </div>
+
+			{% endif %}
+		</div>
+	</nav>
+</header>
+<body>
+    <div class="container">
+	    {% block content %}
+	    {% endblock content %}
+    </div>
+
+   
+</body>
+</html>
