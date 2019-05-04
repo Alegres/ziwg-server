@@ -62,3 +62,14 @@ class Plantation2Aduino(models.Model):
     id_plantation = models.ForeignKey(Plantation, on_delete=models.CASCADE)
     id_arduino=models.IntegerField(null=False,blank=False)
     secret_code= models.CharField(max_length=32)
+
+class PlantationPreset(models.Model):
+
+    name= models.CharField(max_length=30)
+    id_user= models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    good_temperature=models.IntegerField(blank=True,null=True)
+    good_humidity=models.IntegerField(blank=True,null=True)
+    water_per_day=models.IntegerField(blank=True,null=True)
+    how_many_times_to_water=models.IntegerField(blank=True,null=True)
+    expected_growth=models.IntegerField(blank=True,null=True)
+    data_ins=models.DateField()
