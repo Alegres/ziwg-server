@@ -81,12 +81,10 @@ WSGI_APPLICATION = 'apiskeleton.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'apiskeleton_db',
-        'USER': 'apiskeletonuser',
-        'PASSWORD': 'apiskeletonpw',
-        # 'USER': 'root',
-        # 'PASSWORD': 'docker_root',
-        'HOST': 'mysql',
+        'NAME': 'plants_project_db',
+        'USER': 'api_user',
+        'PASSWORD': 'GBSy933mKVx3SY2j&V',
+        'HOST': 'db',
         'PORT': '3306',
         'TEST': {
             'NAME': 'docker_django_db_test',

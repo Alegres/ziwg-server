@@ -14,7 +14,7 @@ def api_login(request):
     This view is called through API POST with a json body like so:
 
     {
-        "username": "admin",
+        "useremail": "admin",
         "password": "admin"
     }
 
