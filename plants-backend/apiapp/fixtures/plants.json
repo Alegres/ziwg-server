@@ -1,0 +1,29 @@
+[
+    {
+        "model": "apiapp.plantation",
+        "pk": 1,
+        "fields": {
+            "name": "Plant1",
+            "good_temperature": "30",
+            "good_humidity": "20",
+            "water_per_day": "11",
+            "how_many_times_to_water": "5",
+            "expected_growth": "5",
+            "data_ins": "2018-08-29"
+        }
+    },
+    {
+        "model": "apiapp.plantation",
+        "pk": 2,
+        "fields": {
+            "name": "Plant2",
+            "good_temperature": "35",
+            "good_humidity": "25",
+            "water_per_day": "16",
+            "how_many_times_to_water": "9",
+            "expected_growth": "2",
+            "data_ins": "2019-08-29"
+        }
+    }
+]
+    
