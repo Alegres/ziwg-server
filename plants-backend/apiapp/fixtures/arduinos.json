@@ -1,0 +1,13 @@
+[
+    {
+        "model": "apiapp.plantation2arduino",
+        "pk": 1,
+        "fields": {
+            "id": "1",
+            "id_arduino": "1",
+            "id_plantation": "1",
+            "secret_code": "20"
+        }
+    }
+]
+    

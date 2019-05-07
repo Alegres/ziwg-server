@@ -16,13 +16,12 @@ def api_preset_detail(request, pk):
     put:
     Update one plant.
     """
-    try:
-        preset_id = PlantationPreset.objects.get(id_user=pk)
-    except PlantationPreset.DoesNotExist:
+    preset_id = PlantationPreset.objects.filter(id_user=pk)
+    if preset_id.count() == 0:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = PresetSerializer(preset_id)
+        serializer = PresetSerializer(preset_id, many=True)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
