@@ -4,13 +4,19 @@
         "pk": 1,
         "fields": {
             "id_user": "1",
-            "name": "Preset1",
-            "good_temperature": "30",
-            "good_humidity": "20",
-            "water_per_day": "11",
-            "how_many_times_to_water": "5",
-            "expected_growth": "5",
-            "data_ins": "2018-08-29"
+                  "name": "Preset1",
+            "temp": "35",
+            "humidity": "25",
+            "water_per_day": "16",
+            "how_many_times_to_water": "9",
+            "soil": "1",
+            "data_ins": "2019-08-29",
+             "min_temp": "1",
+             "max_temp": "1",
+             "min_soil": "1",
+             "max_soil": "12",
+             "min_humidity": "12",
+             "max_humidity": "21"
         }
     },
     {
@@ -19,13 +25,21 @@
         "fields": {
             "id_user": "2",
             "name": "Preset2",
-            "good_temperature": "35",
-            "good_humidity": "25",
+            "temp": "35",
+            "humidity": "25",
             "water_per_day": "16",
             "how_many_times_to_water": "9",
-            "expected_growth": "2",
-            "data_ins": "2019-08-29"
+            "soil": "2",
+            "data_ins": "2019-08-29",
+             "min_temp": "2",
+             "max_temp": "2",
+             "min_soil": "2",
+             "max_soil": "2",
+             "min_humidity": "2",
+             "max_humidity": "2"
         }
     }
+
+
 ]
     
