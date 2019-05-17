@@ -5,3 +5,5 @@
 
 python manage.py loaddata users
 python manage.py loaddata plants
+python manage.py loaddata presets
+python manage.py loaddata measurements

@@ -38,6 +38,20 @@
              "min_humidity": "2",
              "max_humidity": "2"
         }
+    },
+    {
+        "model": "apiapp.plantationpreset",
+        "pk": 3,
+        "fields": {
+            "id_user": "2",
+            "name": "Preset3",
+            "good_temperature": "35",
+            "good_humidity": "25",
+            "water_per_day": "16",
+            "how_many_times_to_water": "9",
+            "expected_growth": "2",
+            "data_ins": "2019-08-30"
+        }
     }
 
 

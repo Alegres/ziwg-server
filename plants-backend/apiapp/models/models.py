@@ -50,7 +50,7 @@ class User2Plantation(models.Model):
     id_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-class Plantation2Aduino(models.Model):
+class Plantation2Arduino(models.Model):
 
     id = models.AutoField(primary_key=True)
     id_plantation = models.ForeignKey(PlantationMeasurements, on_delete=models.CASCADE)
