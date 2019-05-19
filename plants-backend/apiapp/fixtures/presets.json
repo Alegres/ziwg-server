@@ -5,18 +5,15 @@
         "fields": {
             "id_user": "1",
                   "name": "Preset1",
-            "temp": "35",
-            "humidity": "25",
             "water_per_day": "16",
             "how_many_times_to_water": "9",
-            "soil": "1",
             "data_ins": "2019-08-29",
-             "min_temp": "1",
-             "max_temp": "1",
-             "min_soil": "1",
-             "max_soil": "12",
-             "min_humidity": "12",
-             "max_humidity": "21"
+            "min_temp": "1.0",
+            "max_temp": "1.0",
+            "min_soil": "1.0",
+            "max_soil": "12.0",
+            "min_humidity": "12.0",
+            "max_humidity": "21.0"
         }
     },
     {
@@ -25,32 +22,15 @@
         "fields": {
             "id_user": "2",
             "name": "Preset2",
-            "temp": "35",
-            "humidity": "25",
             "water_per_day": "16",
             "how_many_times_to_water": "9",
-            "soil": "2",
             "data_ins": "2019-08-29",
-             "min_temp": "2",
-             "max_temp": "2",
-             "min_soil": "2",
-             "max_soil": "2",
-             "min_humidity": "2",
-             "max_humidity": "2"
-        }
-    },
-    {
-        "model": "apiapp.plantationpreset",
-        "pk": 3,
-        "fields": {
-            "id_user": "2",
-            "name": "Preset3",
-            "good_temperature": "35",
-            "good_humidity": "25",
-            "water_per_day": "16",
-            "how_many_times_to_water": "9",
-            "expected_growth": "2",
-            "data_ins": "2019-08-30"
+            "min_temp": "2.0",
+            "max_temp": "2.0",
+            "min_soil": "2.0",
+            "max_soil": "2.0",
+            "min_humidity": "2.0",
+            "max_humidity": "2.0"
         }
     }
 

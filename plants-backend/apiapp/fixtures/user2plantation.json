@@ -1,0 +1,19 @@
+[
+  {
+    "model": "apiapp.user2plantation",
+    "pk": 1,
+    "fields": {
+      "id_plantation": "1",
+      "id_user": "1"
+    }
+  },
+  {
+    "model": "apiapp.user2plantation",
+    "pk": 2,
+    "fields": {
+      "id_plantation": "2",
+      "id_user": "2"
+    }
+  }
+
+]

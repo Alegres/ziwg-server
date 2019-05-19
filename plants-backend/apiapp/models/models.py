@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 class PlantationPreset(models.Model):
-
+    id = models.AutoField(primary_key=True)
     id_user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     water_per_day = models.IntegerField(blank=True, null=True)
