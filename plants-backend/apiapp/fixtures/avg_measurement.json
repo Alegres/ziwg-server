@@ -4,11 +4,10 @@
         "pk": 1,
         "fields": {
             "name": "AVGMeas1",
-          "id_plantation": "1",
+            "id_plantation": "1",
             "temp": "30",
             "humidity": "20",
-            "soil": "5",
-
+            "soil": "5"
         }
     },
     {
@@ -16,11 +15,10 @@
         "pk": 2,
         "fields": {
             "name": "AVGMeas2",
-          "id_plantation": "2",
+            "id_plantation": "2",
             "temp": "35",
             "humidity": "25",
-            "soil": "9",
-
+            "soil": "9"
         }
     }
 ]
