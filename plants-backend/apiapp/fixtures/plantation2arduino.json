@@ -5,7 +5,7 @@
     "fields": {
       "id_plantation": "1",
       "id_arduino": "1",
-      "secret_code": "pbkdf2_sha256$36000$SoF7ueJzOE1I$244qaRI1dReT4DxZKXJi2sRmuKdqPcjeOiUaPdH2UV0"
+      "secret_code": "30"
     }
   },
   {
@@ -14,7 +14,7 @@
     "fields": {
       "id_plantation": "2",
       "id_arduino": "2",
-        "secret_code": "pbkdf2_sha256$36000$SoF7ueJzOE1I$244qaRI1dReT4DxZKXJi2sRmuKdqPcjeOiUaPdH2UV0"
+        "secret_code": "20"
 
     }
   }
