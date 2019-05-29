@@ -3,26 +3,22 @@
         "model": "apiapp.plantationmeasurements",
         "pk": 1,
         "fields": {
-            "name": "Meas1",
-          "id_plantation": "1",
+            "id_plantation": "1",
             "temp": "30",
             "humidity": "20",
             "soil": "5",
             "data_ins":  "2018-08-29"
-
         }
     },
     {
         "model": "apiapp.plantationmeasurements",
         "pk": 2,
         "fields": {
-            "name": "Meas2",
-          "id_plantation": "2",
+            "id_plantation": "2",
             "temp": "35",
             "humidity": "25",
             "soil": "9",
-           "data_ins":  "2018-08-29"
-
+            "data_ins":  "2018-08-29"
         }
     }
 ]

@@ -42,7 +42,7 @@ services:
         - MYSQL_DATABASE=plants_project_db
         - MYSQL_USER=api_user
         - MYSQL_PASSWORD=GBSy933mKVx3SY2j&V
-      ports:
+      expose:
         - "3306"
 
     pma:
