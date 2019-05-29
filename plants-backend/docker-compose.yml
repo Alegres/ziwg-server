@@ -55,3 +55,4 @@ services:
       environment:
         MYSQL_USERNAME: root
         MYSQL_ROOT_PASSWORD: docker_root
+        PMA_ABSOLUTE_URI: "https://plants.ml/pma/"
