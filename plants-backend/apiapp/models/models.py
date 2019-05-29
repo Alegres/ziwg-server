@@ -10,7 +10,7 @@ class PlantationPreset(models.Model):
     name = models.CharField(max_length=30)
     water_per_day = models.IntegerField(blank=True, null=True)
     how_many_times_to_water = models.IntegerField(blank=True, null=True)
-    expected_growth = models.IntegerField(blank=True)
+    expected_growth = models.IntegerField(blank=True,null=True)
     data_ins = models.DateField()
     min_temp= models.FloatField(blank=True, null=True)
     max_temp= models.FloatField(blank=True, null=True)
@@ -21,7 +21,7 @@ class PlantationPreset(models.Model):
 
 class Plantation(models.Model):
     id = models.AutoField(primary_key=True)
-    id_preset=models.ForeignKey(PlantationPreset,on_delete=models.CASCADE)
+    id_preset=models.ForeignKey(PlantationPreset,on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=30)
 
 class PlantationMeasurements(models.Model):
