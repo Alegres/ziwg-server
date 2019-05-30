@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="475a4b0f-f564-4e4b-b3c9-9c7b105b8a8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plants-backend/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/plantation2arduino.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/user2plantation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plants-backend/apiapp/urls/plantDelete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plants-backend/apiapp/views/plantDelete.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plants-backend/apiapp/views/sendInfo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/avg_measurement.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/avg_measurement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/measurements.json" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/measurements.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/plants.json" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/plants.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/presets.json" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/fixtures/presets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/urls/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/urls/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/views/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plants-backend/apiskeleton/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiskeleton/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plants-backend/import-fixtures.sh" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/import-fixtures.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,76 +23,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/measurements.json">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/sendInfo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            <state relative-caret-position="45">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/plantation2arduino.json">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/plant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/plants.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/presets.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/user2plantation.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/users.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/models/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="15" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plant.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="6" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plantDelete.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plantation2arduino.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plants-backend/apiskeleton/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
-              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state relative-caret-position="645">
+              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
               <folding>
                 <element signature="e#313#322#0" expanded="true" />
               </folding>
@@ -102,16 +91,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/serializers/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="723">
+              <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/models/__init__.py">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/plantDelete.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/measurement.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,6 +157,8 @@
       <find>blank=True, null=True</find>
       <find>PlantationPreset</find>
       <find>Plantation2Arduino</find>
+      <find>EMAIL_BACKEND</find>
+      <find>import registration</find>
     </findStrings>
     <replaceStrings>
       <replace>required=True</replace>
@@ -150,7 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/venv/bin/ziwp/ziwp/views.py" />
         <option value="$PROJECT_DIR$/venv/bin/ziwp/ziwp/urls.py" />
         <option value="$PROJECT_DIR$/venv/bin/ziwp/settings.py" />
         <option value="$PROJECT_DIR$/venv/bin/ziwp/ziwp/models.py" />
@@ -169,9 +190,7 @@
         <option value="$PROJECT_DIR$/venv/bin/ziwg/ziwg/settings.py" />
         <option value="$PROJECT_DIR$/venv/bin/ziwg/wsgi.py" />
         <option value="$PROJECT_DIR$/django-apiskeleton-master/apiapp/models/models.py" />
-        <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/plant.py" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/measurment.py" />
-        <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/__init__.py" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/serializers/PlantationAvgSerializer.py" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/fixtures/package.json" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/measurement.py" />
@@ -192,18 +211,26 @@
         <option value="$PROJECT_DIR$/plants-backend/apiapp/fixtures/plants.json" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/fixtures/user2plantation.json" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/fixtures/plantation2arduino.json" />
-        <option value="$PROJECT_DIR$/plants-backend/apiapp/models/__init__.py" />
-        <option value="$PROJECT_DIR$/plants-backend/apiskeleton/settings.py" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/fixtures/presets.json" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/models/models.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/models/__init__.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/sendInfo.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/__init__.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/plant.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/views/plant.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/urls/plantDelete.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/views/plantDelete.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/views/sendInfo.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiskeleton/settings.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/views/user.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="960" />
-    <option name="y" value="30" />
-    <option name="width" value="960" />
-    <option name="height" value="995" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="117" />
+    <option name="y" value="124" />
+    <option name="width" value="950" />
+    <option name="height" value="746" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -213,7 +240,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,12 +276,27 @@
               <item name="ziwg-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ziwg-server" type="462c0819:PsiDirectoryNode" />
               <item name="plants-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="apiapp" type="462c0819:PsiDirectoryNode" />
+              <item name="urls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ziwg-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ziwg-server" type="462c0819:PsiDirectoryNode" />
+              <item name="plants-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="apiapp" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ziwg-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ziwg-server" type="462c0819:PsiDirectoryNode" />
+              <item name="plants-backend" type="462c0819:PsiDirectoryNode" />
               <item name="apiskeleton" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,17 +401,19 @@
       <workItem from="1557170629858" duration="4793000" />
       <workItem from="1558096311547" duration="5033000" />
       <workItem from="1558283232642" duration="2928000" />
+      <workItem from="1559138265928" duration="205000" />
+      <workItem from="1559223275992" duration="6667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16197000" />
+    <option name="totallyTimeSpent" value="23069000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="30" width="960" height="995" extended-state="4" />
+    <frame x="0" y="30" width="1920" height="995" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32932165" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16435432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -411,14 +454,6 @@
     <SUITE FILE_PATH="coverage/ziwp$run_serv.coverage" NAME="run serv Coverage Results" MODIFIED="1554478002181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/bin/ziwg" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/bin/ziwg/plants/admin.py" />
-    <entry file="file://$PROJECT_DIR$/venv/bin/ziwg/plants/apps.py" />
-    <entry file="file://$PROJECT_DIR$/venv/bin/ziwg/plants/tests.py" />
-    <entry file="file://$PROJECT_DIR$/venv/bin/ziwg/plants/models.py" />
-    <entry file="file://$PROJECT_DIR$/venv/bin/ziwg/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/conf/global_settings.py" />
-    <entry file="file://$PROJECT_DIR$/ziwp/settings.py" />
-    <entry file="file://$PROJECT_DIR$/ziwp/urls.py" />
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1987300077/-337502517/django/db/models/fields/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -455,53 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiskeleton/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/registration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/plant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/remote_sources/-1987300077/-337502517/django/db/models/fields/related.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -509,37 +497,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/preset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/measurement.json" />
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/measurement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/avg_measurement.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -554,16 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/measurement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="76" selection-start-line="51" selection-start-column="76" selection-end-line="51" selection-end-column="76" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
@@ -640,16 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plantation2arduino.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/serializers/measurement.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -669,9 +607,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/admin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -706,31 +641,7 @@
     <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/plants.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/user2plantation.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/users.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/serializers/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/models/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -741,22 +652,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/models/models.py">
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/user2plantation.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/serializers/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/measurement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/preset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiskeleton/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/registration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/registration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/models/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="61" lean-forward="true" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/sendInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/fixtures/users.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/models/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="76" lean-forward="true" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="6" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plantation2arduino.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/measurement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/plant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/urls/plantDelete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/plantDelete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/sendInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plants-backend/apiskeleton/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        <state relative-caret-position="645">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
             <element signature="e#313#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/views/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
