@@ -2,10 +2,12 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apiapp.models import PlantationMeasurements
+from apiapp.models import PlantationPreset
+from apiapp.models import Plantation
 from apiapp.serializers.measurement import PlantationMeasurementsSerializer
 from apiapp.utils.jsonreader import JsonReader
 from apiapp.security.voters import UserVoter
-
+from apiapp.views.sendInfo import inform_user
 
 @api_view(['GET', 'PUT'])
 def api_measurement(request, pk):
@@ -32,10 +34,20 @@ def api_measurement(request, pk):
         serializer = PlantationMeasurementsSerializer(plant_inst, data=data)
         if serializer.is_valid():
             serializer.save()
+            if not checkIfMeasurementsAreOk(serializer.data):
+                    inform_user(serializer.data['id_plantation'])
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+def checkIfMeasurementsAreOk(measurementtData):
+    id = measurementtData.get('id_plantation')
+    plantation= Plantation.objects.get(pk=id)
+    preset= PlantationPreset.objects.get(pk=plantation.id_preset.id)
+    return isBetweenValues(preset.min_soil,preset.max_soil,measurementtData['soil']) and isBetweenValues(preset.min_temp,preset.max_temp,measurementtData['temp']) and isBetweenValues(preset.min_humidity,preset.max_humidity,measurementtData['humidity'])
+
+def isBetweenValues(min,max,value):
+    return  min<=value<=max
 @api_view(['GET', 'POST'])
 def api_admin_measurement_index(request):
     """

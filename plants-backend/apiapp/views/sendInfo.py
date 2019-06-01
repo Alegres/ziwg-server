@@ -1,8 +1,6 @@
 from apiapp.models import Plantation2Arduino
 from apiapp.models import User2Plantation
 from django.core.mail import send_mail
-from smsish import
-import sys;
 infoByEmail=True
 infoBySms=True
 def inform_user(idArduino):
