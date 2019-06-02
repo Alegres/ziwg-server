@@ -26,8 +26,7 @@ SECRET_KEY = 'lv!zklyfub+z-bh2%b&tzcpdk_y0++)4tu!u#$!kd9^%6bk)$-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['plants.ml','127.0.0.1'
-                 ]
+ALLOWED_HOSTS = ['plants.ml', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -44,8 +43,8 @@ INSTALLED_APPS = [
     'apiapp',
 ]
 #INSTALLED_APPS += (#
-	#'smsish',
-#)
+# 'smsish',
+# )
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

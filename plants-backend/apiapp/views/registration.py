@@ -5,6 +5,7 @@ from rest_framework import status
 import requests
 import json
 from apiapp.utils.jsonreader import JsonReader
+from apiapp.serializers.user import UserSerializer
 
 
 @api_view(['POST'])
@@ -33,14 +34,9 @@ def api_login(request):
 
 @api_view(['POST'])
 def api_register(request):
-
-    serialized = UserSerializer(data=request.DATA)
-    if serialized.is_valid():
-        User.objects.create_user(
-            serialized.init_data['email'],
-            serialized.init_data['username'],
-            serialized.init_data['password']
-        )
-        return Response(serialized.data, status=status.HTTP_201_CREATED)
-    else:
-        return Response(serialized._errors, status=status.HTTP_400_BAD_REQUEST)
+    data = JsonReader.read_body(request)
+    serializer = UserSerializer(data=data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

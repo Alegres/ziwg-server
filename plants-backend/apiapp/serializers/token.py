@@ -1,6 +1,7 @@
 from rest_framework_jwt.serializers import JSONWebTokenSerializer
 
 from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth.models import update_last_login
 from django.utils.translation import ugettext as _
 from rest_framework import serializers
 
@@ -35,7 +36,7 @@ class CustomJWTSerializer(JSONWebTokenSerializer):
                         raise serializers.ValidationError(msg)
 
                     payload = jwt_payload_handler(user)
-
+                    update_last_login(None, user)
                     return {
                         'token': jwt_encode_handler(payload),
                         'user': user
