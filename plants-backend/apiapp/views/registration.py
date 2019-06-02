@@ -29,3 +29,18 @@ def api_login(request):
     )
     response_login_dict = json.loads(response_login.content)
     return Response(response_login_dict, response_login.status_code)
+
+
+@api_view(['POST'])
+def api_register(request):
+
+    serialized = UserSerializer(data=request.DATA)
+    if serialized.is_valid():
+        User.objects.create_user(
+            serialized.init_data['email'],
+            serialized.init_data['username'],
+            serialized.init_data['password']
+        )
+        return Response(serialized.data, status=status.HTTP_201_CREATED)
+    else:
+        return Response(serialized._errors, status=status.HTTP_400_BAD_REQUEST)
