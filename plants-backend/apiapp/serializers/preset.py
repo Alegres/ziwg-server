@@ -8,8 +8,6 @@ class PresetSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(
         required=True, allow_blank=False, max_length=30)
-    good_temperature = serializers.IntegerField(required=True)
-    good_humidity = serializers.IntegerField(required=True)
     water_per_day = serializers.IntegerField(required=True)
     how_many_times_to_water = serializers.IntegerField(required=True)
     expected_growth = serializers.IntegerField(required=True)
@@ -20,7 +18,6 @@ class PresetSerializer(serializers.Serializer):
     max_soil = serializers.FloatField(required=True)
     min_humidity = serializers.FloatField(required=True)
     max_humidity = serializers.FloatField(required=True)
-
 
     def create(self, data):
         """
@@ -63,4 +60,3 @@ class PresetSerializer(serializers.Serializer):
         instance.max_humidity = data.get('max_humidity', instance.max_humidity)
         instance.save()
         return instance
-
