@@ -1,11 +1,14 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
 from apiapp.models import User
 
 
 class UserSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     username = serializers.CharField(
-        required=True, allow_blank=False, max_length=100)
+        required=True, allow_blank=False, max_length=100, validators=[
+            UniqueValidator(queryset=User.objects.all())
+        ])
     password = serializers.CharField(required=True, write_only=True)
     email = serializers.CharField(
         required=True, allow_blank=False, max_length=100)
