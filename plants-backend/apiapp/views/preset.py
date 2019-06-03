@@ -44,9 +44,9 @@ def api_admin_preset_index(request):
     post:
     Create new plants.
     """
-    voter = UserVoter(request)
-    if not voter.is_superuser():
-        return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
+#    voter = UserVoter(request)
+#    if not voter.is_superuser():
+#        return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
 
     if request.method == 'GET':
         serializer = PresetSerializer(
