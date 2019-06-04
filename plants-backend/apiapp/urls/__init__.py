@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^plant/delete/', include('apiapp.urls.plantDelete')),
     url(r'^preset/', include('apiapp.urls.preset')),
     url(r'^measurement/', include('apiapp.urls.measurement')),
+    url(r'^avg_measurement/', include('apiapp.urls.avg_measurement')),
 ]

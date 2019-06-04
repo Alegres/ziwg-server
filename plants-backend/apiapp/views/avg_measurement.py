@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apiapp.models import PlantationAvg
-from apiapp.serializers.measurement import PlantationAvgSerializer
+from apiapp.serializers.avg_measurement import PlantationAvgSerializer
 from apiapp.utils.jsonreader import JsonReader
 from apiapp.security.voters import UserVoter
 
@@ -44,9 +44,9 @@ def api_admin_avg_measurement_index(request):
     post:
     Create new plants.
     """
-    voter = UserVoter(request)
-    if not voter.is_superuser():
-        return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
+   # voter = UserVoter(request)
+   # if not voter.is_superuser():
+   #     return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
 
     if request.method == 'GET':
         serializer = PlantationAvgSerializer(PlantationAvg.objects.all(), many=True)
