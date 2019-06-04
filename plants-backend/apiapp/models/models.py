@@ -19,15 +19,15 @@ class PlantationPreset(models.Model):
     max_soil = models.FloatField(blank=True, null=True)
     min_humidity = models.FloatField(blank=True, null=True)
     max_humidity = models.FloatField(blank=True, null=True)
-    color= models.CharField(blank=True,null=True)
+    color= models.CharField(blank=True,null=True, max_length=32)
 
 class Plantation(models.Model):
     id = models.AutoField(primary_key=True)
     id_preset = models.ForeignKey(
         PlantationPreset, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=30)
-    color = models.CharField(blank=True, null=True)
-    secret_code = models.CharField(max_length=32)
+    color = models.CharField(blank=True, null=True, max_length=32)
+    secret_code = models.CharField(max_length=32, null=True)
 
 
 class PlantationMeasurements(models.Model):

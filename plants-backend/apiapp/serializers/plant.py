@@ -9,7 +9,7 @@ class PlantationSerializer(serializers.Serializer):
         read_only=False, queryset=PlantationPreset.objects.all())
     name = serializers.CharField(
         required=True, allow_blank=False, max_length=30)
-    color = serializers.CharField(blank=True, null=True)
+    color = serializers.CharField( required=True, max_length=32)
     secret_code = serializers.CharField(required=True, max_length=32)
     def create(self, data):
         """
