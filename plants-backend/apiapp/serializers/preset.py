@@ -18,7 +18,7 @@ class PresetSerializer(serializers.Serializer):
     max_soil = serializers.FloatField(required=True)
     min_humidity = serializers.FloatField(required=True)
     max_humidity = serializers.FloatField(required=True)
-
+    color = serializers.CharField(required=True)
     def create(self, data):
         """
         Create and return a new `PlantationPreset` instance, given the validated data.
@@ -35,6 +35,7 @@ class PresetSerializer(serializers.Serializer):
             max_soil=data.get('max_soil'),
             min_humidity=data.get('min_humidity'),
             max_humidity=data.get('max_humidity'),
+            color=data.get('color'),
 
         )
         instance.save()
@@ -58,5 +59,6 @@ class PresetSerializer(serializers.Serializer):
         instance.max_soil = data.get('max_soil', instance.max_soil)
         instance.min_humidity = data.get('min_humidity', instance.min_humidity)
         instance.max_humidity = data.get('max_humidity', instance.max_humidity)
+        instance.color=data.get('color',instance.color)
         instance.save()
         return instance
