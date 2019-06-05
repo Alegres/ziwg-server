@@ -23,6 +23,7 @@ services:
       build: ./docker/django
       container_name: ${PROJECT_NAME}-django
       command: python3 manage.py runserver 0.0.0.0:8000
+      restart: always
       volumes:
         - .:/application
       ports:
@@ -48,6 +49,7 @@ services:
     pma:
       image: phpmyadmin/phpmyadmin
       container_name: ${PROJECT_NAME}-pma
+      restart: always
       links:
         - db:db
       ports:
