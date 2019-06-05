@@ -20,6 +20,9 @@ class AbstractVoter:
 
         return False
 
+    def get_id(self):
+        return self.request.user.id
+
 
 class UserVoter(AbstractVoter):
 

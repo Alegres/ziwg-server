@@ -16,19 +16,21 @@ def api_preset_detail(request, pk):
     put:
     Update one plant.
     """
-    preset_id = PlantationPreset.objects.filter(id_user=pk)
-    if preset_id.count() == 0:
+    voter = UserVoter(request)
+    if not voter.is_logged_in():
+        return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
+
+    try:
+        preset_id = PlantationPreset.objects.get(pk=pk)
+    except PlantationPreset.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = PresetSerializer(preset_id, many=True)
+        serializer = PresetSerializer(preset_id)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        voter = UserVoter(request)
         data = JsonReader.read_body(request)
-        if not voter.is_superuser():
-            return Response({'error': "Non admin cannot update preset"}, status=status.HTTP_403_FORBIDDEN)
         serializer = PresetSerializer(preset_id, data=data)
         if serializer.is_valid():
             serializer.save()
@@ -44,13 +46,13 @@ def api_admin_preset_index(request):
     post:
     Create new plants.
     """
-#    voter = UserVoter(request)
-#    if not voter.is_superuser():
-#        return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
+    voter = UserVoter(request)
+    if not voter.is_logged_in():
+        return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
 
     if request.method == 'GET':
         serializer = PresetSerializer(
-            PlantationPreset.objects.all(), many=True)
+            PlantationPreset.objects.filter(id_user=voter.get_id()), many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
