@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from apiapp.models import Plantation
+from apiapp.models import Plantation, User2Plantation
 from apiapp.serializers.plant import PlantationSerializer
 from apiapp.utils.jsonreader import JsonReader
 from apiapp.security.voters import UserVoter
@@ -15,6 +15,11 @@ def api_plant_detail(request, pk):
     put:
     Update one plant.
     """
+
+    voter = UserVoter(request)
+    if not voter.is_logged_in():
+        return Response({'error': "Plant API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
+
     try:
         plant_inst = Plantation.objects.get(pk=pk)
     except Plantation.DoesNotExist:
@@ -25,10 +30,7 @@ def api_plant_detail(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        voter = UserVoter(request)
         data = JsonReader.read_body(request)
-        if not voter.is_superuser():
-            return Response({'error': "Non admin cannot update admin attributes"}, status=status.HTTP_403_FORBIDDEN)
         serializer = PlantationSerializer(plant_inst, data=data)
         if serializer.is_valid():
             serializer.save()
@@ -44,12 +46,14 @@ def api_admin_plant_index(request):
     post:
     Create new plants.
     """
-#    voter = UserVoter(request)
-#    if not voter.is_superuser():
-#        return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
+    voter = UserVoter(request)
+    if not voter.is_logged_in():
+        return Response({'error': "Plant API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
 
     if request.method == 'GET':
-        serializer = PlantationSerializer(Plantation.objects.all(), many=True)
+        plants = User2Plantation.objects.filter(id_user=voter.get_id())
+        serializer = PlantationSerializer(
+            Plantation.objects.filter(pk__in=plants), many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
