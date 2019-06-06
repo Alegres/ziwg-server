@@ -12,7 +12,7 @@ class PlantationPreset(models.Model):
     water_per_day = models.IntegerField(blank=True, null=True)
     how_often_to_water = models.IntegerField(blank=True, null=True)
     expected_growth = models.IntegerField(blank=True, null=True)
-    how_long_to_water= models.IntegerFIeld(blank=True,null=True)
+    how_long_to_water = models.IntegerField(blank=True, null=True)
     data_ins = models.DateField()
     min_temp = models.FloatField(blank=True, null=True)
     max_temp = models.FloatField(blank=True, null=True)
@@ -20,7 +20,8 @@ class PlantationPreset(models.Model):
     max_soil = models.FloatField(blank=True, null=True)
     min_humidity = models.FloatField(blank=True, null=True)
     max_humidity = models.FloatField(blank=True, null=True)
-    color= models.CharField(blank=True,null=True, max_length=32)
+    color = models.CharField(blank=True, null=True, max_length=32)
+
 
 class Plantation(models.Model):
     id = models.AutoField(primary_key=True)
