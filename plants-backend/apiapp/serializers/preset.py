@@ -8,8 +8,8 @@ class PresetSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(
         required=True, allow_blank=False, max_length=30)
-    water_per_day = serializers.IntegerField(required=True)
-    how_many_times_to_water = serializers.IntegerField(required=True)
+    how_long_to_water = serializers.IntegerField(required=True)
+    how_often_to_water = serializers.IntegerField(required=True)
     expected_growth = serializers.IntegerField(required=True)
     data_ins = serializers.DateField(required=True)
     min_temp = serializers.FloatField(required=True)
@@ -26,8 +26,8 @@ class PresetSerializer(serializers.Serializer):
         instance = PlantationPreset.objects.create(
             id_user=data.get('id_user'),
             name=data.get('name'),
-            how_many_times_to_water=data.get('how_many_times_to_water'),
-            water_per_day=data.get('water_per_day'),
+            how_often_to_water=data.get('how_often_to_water'),
+            how_long_to_water=data.get('how_long_to_water'),
             data_ins=data.get('data_ins'),
             min_temp=data.get('min_temp'),
             max_temp=data.get('max_temp'),
@@ -48,9 +48,9 @@ class PresetSerializer(serializers.Serializer):
         instance.id_user = data.get('id_user', instance.id_user)
         instance.name = data.get('name', instance.name)
         instance.water_per_day = data.get(
-            'water_per_day', instance.water_per_day)
+            'how_long_to_water', instance.how_long_to_water)
         instance.how_many_times_to_water = data.get(
-            'how_many_times_to_water', instance.how_many_times_to_water)
+            'how_often_to_water', instance.how_often_to_water)
         instance.expected_growth = data.get(
             'expected_growth', instance.expected_growth)
         instance.min_temp = data.get('min_temp', instance.min_temp)

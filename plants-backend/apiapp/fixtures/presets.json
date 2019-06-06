@@ -5,8 +5,8 @@
         "fields": {
             "id_user": "1",
                   "name": "Preset1",
-            "water_per_day": "16",
-            "how_many_times_to_water": "9",
+            "how_long_to_water": "16",
+            "how_often_to_water": "9",
             "data_ins": "2019-08-29",
             "min_temp": "1.0",
             "max_temp": "1.0",
@@ -22,8 +22,8 @@
         "fields": {
             "id_user": "2",
             "name": "Preset2",
-            "water_per_day": "16",
-            "how_many_times_to_water": "9",
+            "how_long_to_water": "16",
+            "how_often_to_water": "9",
             "data_ins": "2019-08-29",
             "min_temp": "2.0",
             "max_temp": "2.0",
