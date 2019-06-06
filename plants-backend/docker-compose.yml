@@ -36,6 +36,7 @@ services:
       image: mariadb:10.4
       container_name: ${PROJECT_NAME}-database
       working_dir: /application
+      restart: always
       volumes:
         - db-data:/application
       environment:
