@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^admin/', include('apiapp.urls.admin')),
+    url(r'^arduino_data/', include ('apiapp.urls.arduino')),
     url(r'^auth/', include('apiapp.urls.registration')),
     url(r'^user/', include('apiapp.urls.user')),
     url(r'^plant/', include('apiapp.urls.plant')),
