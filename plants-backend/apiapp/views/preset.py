@@ -4,11 +4,12 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apiapp.models import PlantationPreset, User
+from apiapp.models import User2Plantation
 from apiapp.serializers.preset import PresetSerializer
 from apiapp.serializers.user import User
 
 
-@api_view(['GET', 'PUT'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def api_preset_detail(request, pk):
     """
     get:
@@ -36,7 +37,12 @@ def api_preset_detail(request, pk):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    elif request.method == 'DELETE':
+        user2plantation= User2Plantation.objects.get(id_plantation=pk, id_user=voter.get_id())
+        if user2plantation is not None:
+            preset_id.delete()
+            return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_403_FORBIDDEN)
 
 @api_view(['GET', 'POST'])
 def api_admin_preset_index(request):
@@ -47,8 +53,8 @@ def api_admin_preset_index(request):
     Create new plants.
     """
     voter = UserVoter(request)
-    if not voter.is_logged_in():
-        return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
+    #if not voter.is_logged_in():
+   #     return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
 #
     if request.method == 'GET':
         serializer = PresetSerializer(

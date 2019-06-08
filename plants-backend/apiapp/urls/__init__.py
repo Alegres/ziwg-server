@@ -7,7 +7,6 @@ urlpatterns = [
     url(r'^auth/', include('apiapp.urls.registration')),
     url(r'^user/', include('apiapp.urls.user')),
     url(r'^plant/', include('apiapp.urls.plant')),
-    url(r'^plant/delete/', include('apiapp.urls.plantDelete')),
     url(r'^preset/', include('apiapp.urls.preset')),
     url(r'^measurement/', include('apiapp.urls.measurement')),
     url(r'^avg_measurement/', include('apiapp.urls.avg_measurement')),
