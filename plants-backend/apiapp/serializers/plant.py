@@ -19,7 +19,7 @@ class PlantationSerializer(serializers.Serializer):
             name=data.get('name'),
             color=data.get('color'),
             id_preset=data.get('id_preset'),
-            secret_code=hexlify(os.urandom(32))
+            secret_code=hexlify(os.urandom(30))
         )
         instance.save()
         return instance

@@ -11,7 +11,7 @@ class PresetSerializer(serializers.Serializer):
         required=True, allow_blank=False, max_length=30)
     how_long_to_water = serializers.IntegerField(required=True)
     how_often_to_water = serializers.IntegerField(required=True)
-    expected_growth = serializers.IntegerField(required=True)
+    expected_growth = serializers.IntegerField(required=False)
     data_ins = serializers.DateField(required=False)
     min_temp = serializers.FloatField(required=True)
     max_temp = serializers.FloatField(required=True)
@@ -19,7 +19,7 @@ class PresetSerializer(serializers.Serializer):
     max_soil = serializers.FloatField(required=True)
     min_humidity = serializers.FloatField(required=True)
     max_humidity = serializers.FloatField(required=True)
-    color = serializers.CharField(required=True)
+    color = serializers.CharField(required=False)
     def create(self, data):
         """
         Create and return a new `PlantationPreset` instance, given the validated data.

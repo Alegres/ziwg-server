@@ -3,7 +3,7 @@ from apiapp.utils.jsonreader import JsonReader
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from apiapp.models import PlantationPreset
+from apiapp.models import PlantationPreset, User
 from apiapp.serializers.preset import PresetSerializer
 from apiapp.serializers.user import User
 
@@ -49,7 +49,7 @@ def api_admin_preset_index(request):
     voter = UserVoter(request)
     if not voter.is_logged_in():
         return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
-
+#
     if request.method == 'GET':
         serializer = PresetSerializer(
             PlantationPreset.objects.filter(id_user=voter.get_id()), many=True)
@@ -57,8 +57,10 @@ def api_admin_preset_index(request):
 
     elif request.method == 'POST':
         data = JsonReader.read_body(request)
-        data['id_user']=voter
-        serializer = PresetSerializer(data=data)
+        print(voter.get_id())
+        data_copy=data.copy()
+        data_copy['id_user'] = voter.get_id()
+        serializer = PresetSerializer(data=data_copy)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
