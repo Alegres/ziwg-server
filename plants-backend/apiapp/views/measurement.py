@@ -17,13 +17,12 @@ def api_measurement(request, pk):
     put:
     Update one plant.
     """
-    try:
-        plant_inst = PlantationMeasurements.objects.get(id_plantation=pk)
-    except PlantationMeasurements.DoesNotExist:
+    plant_inst = PlantationMeasurements.objects.filter(id_plantation=pk)
+    if not plant_inst:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = PlantationMeasurementsSerializer(plant_inst)
+        serializer = PlantationMeasurementsSerializer(plant_inst, many=True)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
@@ -35,10 +34,9 @@ def api_measurement(request, pk):
         if serializer.is_valid():
             serializer.save()
             if not checkIfMeasurementsAreOk(serializer.data):
-                    inform_user(serializer.data['id_plantation'])
+                inform_user(serializer.data['id_plantation'])
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 
 @api_view(['GET', 'POST'])
@@ -50,11 +48,12 @@ def api_admin_measurement_index(request):
     Create new plants.
     """
    # voter = UserVoter(request)
-  ###  if not voter.is_superuser():
+  # if not voter.is_superuser():
   #      return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
 
     if request.method == 'GET':
-        serializer = PlantationMeasurementsSerializer(PlantationMeasurements.objects.all(), many=True)
+        serializer = PlantationMeasurementsSerializer(
+            PlantationMeasurements.objects.all(), many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
@@ -71,37 +70,41 @@ def api_admin_measurement_index(request):
 
 def checkIfMeasurementsAreOk(measurementtData):
     id = measurementtData.get('id_plantation')
-    plantation= Plantation.objects.get(pk=id)
-    preset= PlantationPreset.objects.get(pk=plantation.id_preset.id)
-    return isBetweenValues(preset.min_soil,preset.max_soil,measurementtData['soil']) and isBetweenValues(preset.min_temp,preset.max_temp,measurementtData['temp']) and isBetweenValues(preset.min_humidity,preset.max_humidity,measurementtData['humidity'])
+    plantation = Plantation.objects.get(pk=id)
+    preset = PlantationPreset.objects.get(pk=plantation.id_preset.id)
+    return isBetweenValues(preset.min_soil, preset.max_soil, measurementtData['soil']) and isBetweenValues(preset.min_temp, preset.max_temp, measurementtData['temp']) and isBetweenValues(preset.min_humidity, preset.max_humidity, measurementtData['humidity'])
 
-def isBetweenValues(min,max,value):
-    return  min<=value<=max
+
+def isBetweenValues(min, max, value):
+    return min <= value <= max
+
 
 def changeAvg(idPlantation):
-    sumTmp=0
-    sumSoil=0
-    sumHumidity=0
-    avg= PlantationAvg.objects.get(id_plantation=idPlantation)
-    measurements= PlantationMeasurements.objects.filter(id_plantation=idPlantation).order_by('-data_ins')[:10]
+    sumTmp = 0
+    sumSoil = 0
+    sumHumidity = 0
+    avg = PlantationAvg.objects.get(id_plantation=idPlantation)
+    measurements = PlantationMeasurements.objects.filter(
+        id_plantation=idPlantation).order_by('-data_ins')[:10]
     for measurement in measurements:
-        sumTmp+=measurement.temp
+        sumTmp += measurement.temp
         sumSoil += measurement.soil
         sumHumidity += measurement.humidity
-    sumHumidity=sumHumidity/(measurements.count())
-    sumTmp=sumTmp/(measurements.count())
-    sumSoil=sumSoil/(measurements.count())
-    print (sumHumidity)
+    sumHumidity = sumHumidity/(measurements.count())
+    sumTmp = sumTmp/(measurements.count())
+    sumSoil = sumSoil/(measurements.count())
+    print(sumHumidity)
     print(sumSoil)
     print(sumTmp)
     print(measurements.count())
 
     print(not avg)
     if not avg:
-        newAvg= PlantationAvg(id_plantation=idPlantation, temp=sumTmp,soil=sumSoil,humidity=sumHumidity)
+        newAvg = PlantationAvg(id_plantation=idPlantation,
+                               temp=sumTmp, soil=sumSoil, humidity=sumHumidity)
         newAvg.save()
     else:
-        avg.temp=sumTmp
-        avg.soil=sumSoil
-        avg.humidity=sumHumidity
+        avg.temp = sumTmp
+        avg.soil = sumSoil
+        avg.humidity = sumHumidity
         avg.save()
