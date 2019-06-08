@@ -1,21 +1,22 @@
 from rest_framework import serializers
-from apiapp.models import Plantation,User,User2Plantation
+from apiapp.models import Plantation, User, User2Plantation
 
-class PlantationMeasurementsSerializer(serializers.Serializer):
+
+class User2PlantationSerializer(serializers.Serializer):
     id_plantation = serializers.PrimaryKeyRelatedField(
         read_only=False, queryset=Plantation.objects.all())
     id = serializers.IntegerField(read_only=True)
     id_user = serializers.PrimaryKeyRelatedField(
         read_only=False, queryset=User.objects.all())
+
     def create(self, data):
         """
         Create and return a new `PlantationAvg` instance, given the validated data.
         """
         instance = User2Plantation.objects.create(
-            data_ins=data.get('data_ins'),
             id_plantation=data.get('id_plantation'),
             id_user=data.get('id_user'),
-                )
+        )
         instance.save()
         return instance
 
@@ -23,8 +24,9 @@ class PlantationMeasurementsSerializer(serializers.Serializer):
         """
         Update and return an existing `PlantationAvg` instance, given the validated data.
         """
-        instance.id_user = data.get('data_ins', instance.id_user)
-        instance.id_plantation = data.get('id_plantation', instance.id_plantation)
-        
+        instance.id_user = data.get('id_user', instance.id_user)
+        instance.id_plantation = data.get(
+            'id_plantation', instance.id_plantation)
+
         instance.save()
         return instance

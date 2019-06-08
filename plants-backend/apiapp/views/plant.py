@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apiapp.models import Plantation, User2Plantation
 from apiapp.serializers.plant import PlantationSerializer
+from apiapp.serializers.user2plantation import User2PlantationSerializer
 from apiapp.utils.jsonreader import JsonReader
 from apiapp.security.voters import UserVoter
 
@@ -60,6 +61,15 @@ def api_admin_plant_index(request):
         data = JsonReader.read_body(request)
         serializer = PlantationSerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
+            instance = serializer.save()
+
+        try:
+            data2 = {"id_user": voter.get_id(), "id_plantation": instance.id}
+            serializer2 = User2PlantationSerializer(data=data2)
+            if serializer2.is_valid():
+                serializer2.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except:
+            instance.delete()
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
