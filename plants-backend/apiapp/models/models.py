@@ -1,7 +1,7 @@
 from django.db import models
 from .user import User
 from django.db.models.signals import post_save
-
+from apiapp.utils.hash import please_create_hash
 from django.dispatch import receiver
 
 
@@ -29,7 +29,8 @@ class Plantation(models.Model):
         PlantationPreset, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=30)
     color = models.CharField(blank=True, null=True, max_length=32)
-    secret_code = models.CharField(max_length=32, null=True)
+    secret_code = models.CharField(
+        max_length=32, default=please_create_hash(), null=True, unique=True)
 
 
 class PlantationMeasurements(models.Model):
