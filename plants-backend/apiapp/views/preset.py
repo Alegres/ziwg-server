@@ -53,8 +53,8 @@ def api_admin_preset_index(request):
     Create new plants.
     """
     voter = UserVoter(request)
-    #if not voter.is_logged_in():
-   #     return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
+    if not voter.is_logged_in():
+        return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
 #
     if request.method == 'GET':
         serializer = PresetSerializer(
