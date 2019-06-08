@@ -8,7 +8,7 @@ from apiapp.utils.jsonreader import JsonReader
 from apiapp.security.voters import UserVoter
 
 
-@api_view(['GET', 'PUT'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def api_plant_detail(request, pk):
     """
     get:
@@ -37,9 +37,11 @@ def api_plant_detail(request, pk):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     elif request.method == 'DELETE':
         plant_inst.delete()
         return Response(status=status.HTTP_200_OK)
+
 
 @api_view(['GET', 'POST'])
 def api_admin_plant_index(request):
@@ -56,7 +58,7 @@ def api_admin_plant_index(request):
     if request.method == 'GET':
         plants = User2Plantation.objects.filter(id_user=voter.get_id())
         serializer = PlantationSerializer(
-            Plantation.objects.filter(pk__in=plants), many=True)
+            Plantation.objects.filter(id__in=plants.values_list('id_plantation', flat=True)), many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':

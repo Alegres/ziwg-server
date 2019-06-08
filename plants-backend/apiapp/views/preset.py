@@ -37,12 +37,15 @@ def api_preset_detail(request, pk):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     elif request.method == 'DELETE':
-        user2plantation= User2Plantation.objects.get(id_plantation=pk, id_user=voter.get_id())
+        user2plantation = User2Plantation.objects.get(
+            id_plantation=pk, id_user=voter.get_id())
         if user2plantation is not None:
             preset_id.delete()
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_403_FORBIDDEN)
+
 
 @api_view(['GET', 'POST'])
 def api_admin_preset_index(request):
@@ -55,7 +58,7 @@ def api_admin_preset_index(request):
     voter = UserVoter(request)
     if not voter.is_logged_in():
         return Response({'error': "Preset API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
-#
+
     if request.method == 'GET':
         serializer = PresetSerializer(
             PlantationPreset.objects.filter(id_user=voter.get_id()), many=True)
@@ -64,7 +67,7 @@ def api_admin_preset_index(request):
     elif request.method == 'POST':
         data = JsonReader.read_body(request)
         print(voter.get_id())
-        data_copy=data.copy()
+        data_copy = data.copy()
         data_copy['id_user'] = voter.get_id()
         serializer = PresetSerializer(data=data_copy)
         if serializer.is_valid():
