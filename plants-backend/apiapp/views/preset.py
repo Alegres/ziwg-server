@@ -57,6 +57,7 @@ def api_admin_preset_index(request):
 
     elif request.method == 'POST':
         data = JsonReader.read_body(request)
+        data['id_user']=voter
         serializer = PresetSerializer(data=data)
         if serializer.is_valid():
             serializer.save()

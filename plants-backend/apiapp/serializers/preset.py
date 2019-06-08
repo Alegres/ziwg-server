@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from apiapp.models import PlantationPreset, User
+from datetime import date
 
 
 class PresetSerializer(serializers.Serializer):
@@ -11,7 +12,7 @@ class PresetSerializer(serializers.Serializer):
     how_long_to_water = serializers.IntegerField(required=True)
     how_often_to_water = serializers.IntegerField(required=True)
     expected_growth = serializers.IntegerField(required=True)
-    data_ins = serializers.DateField(required=True)
+    data_ins = serializers.DateField(required=False)
     min_temp = serializers.FloatField(required=True)
     max_temp = serializers.FloatField(required=True)
     min_soil = serializers.FloatField(required=True)
@@ -28,7 +29,7 @@ class PresetSerializer(serializers.Serializer):
             name=data.get('name'),
             how_often_to_water=data.get('how_often_to_water'),
             how_long_to_water=data.get('how_long_to_water'),
-            data_ins=data.get('data_ins'),
+            data_ins=date.today(),
             min_temp=data.get('min_temp'),
             max_temp=data.get('max_temp'),
             min_soil=data.get('min_soil'),
