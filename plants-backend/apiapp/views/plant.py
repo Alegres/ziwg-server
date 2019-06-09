@@ -38,9 +38,19 @@ def api_plant_detail(request, pk):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
     elif request.method == 'DELETE':
-        plant_inst.delete()
-        return Response(status=status.HTTP_200_OK)
+
+        user2plantation = User2Plantation.objects.get(
+
+            id_plantation=pk, id_user=voter.get_id())
+
+        if user2plantation is not None:
+            plant_inst.delete()
+
+            return Response(status=status.HTTP_200_OK)
+
+        return Response(status=status.HTTP_403_FORBIDDEN)
 
 
 @api_view(['GET', 'POST'])

@@ -3,7 +3,7 @@ from apiapp.utils.jsonreader import JsonReader
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from apiapp.models import PlantationPreset, User
+from apiapp.models import PlantationPreset, User, Plantation
 from apiapp.models import User2Plantation
 from apiapp.serializers.preset import PresetSerializer
 from apiapp.serializers.user import User
@@ -39,12 +39,12 @@ def api_preset_detail(request, pk):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        user2plantation = User2Plantation.objects.get(
-            id_plantation=pk, id_user=voter.get_id())
-        if user2plantation is not None:
+        plantation = Plantation.objects.get(
+            id_preset=preset_id)
+        if plantation is not None:
             preset_id.delete()
             return Response(status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_403_FORBIDDEN)
+        return Response({'error': 'Preset is being used by a plantation'},status=status.HTTP_403_FORBIDDEN)
 
 
 @api_view(['GET', 'POST'])
