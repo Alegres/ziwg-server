@@ -51,3 +51,11 @@ class UserSerializer(serializers.Serializer):
         instance.set_password(data.get('password'))
         instance.save()
         return instance
+
+
+class PasswordSerializer(serializers.Serializer):
+    """
+    Serializer for password change endpoint.
+    """
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)

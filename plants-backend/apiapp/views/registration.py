@@ -7,7 +7,7 @@ from rest_framework import status
 import requests
 import json
 from apiapp.utils.jsonreader import JsonReader
-from apiapp.serializers.user import UserSerializer
+from apiapp.serializers.user import UserSerializer, PasswordSerializer
 
 
 @api_view(['POST'])
@@ -59,3 +59,27 @@ def api_user_detail(request):
     if request.method == 'GET':
         serializer = UserSerializer(user)
         return Response(serializer.data)
+
+
+@api_view(['POST'])
+def api_password_change(request):
+
+    voter = UserVoter(request)
+    if not voter.is_logged_in():
+        return Response({'error': "User API is not allowed by non logged user"}, status=status.HTTP_403_FORBIDDEN)
+
+    if request.method == 'POST':
+        serializer = PasswordSerializer(data=request.data)
+        user = voter.get()
+
+        if serializer.is_valid():
+            if not user.check_password(serializer.data.get('old_password')):
+                return Response({'old_password': ['Wrong password.']},
+                                status=status.HTTP_400_BAD_REQUEST)
+
+            user.set_password(serializer.data.get('new_password'))
+            user.save()
+            return Response({'status': 'New password applied.'}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors,
+                        status=status.HTTP_400_BAD_REQUEST)
