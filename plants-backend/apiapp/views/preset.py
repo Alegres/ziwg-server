@@ -39,9 +39,10 @@ def api_preset_detail(request, pk):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        plantation = Plantation.objects.get(
+        try:
+            plantation = Plantation.objects.get(
             id_preset=preset_id)
-        if plantation is not None:
+        except PlantationPreset.DoesNotExist:
             preset_id.delete()
             return Response(status=status.HTTP_200_OK)
         return Response({'error': 'Preset is being used by a plantation'},status=status.HTTP_403_FORBIDDEN)
