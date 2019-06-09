@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apiapp.models import User
-from apiapp.serializers.user import UserSerializer, UserSettingsSerializer
+from apiapp.serializers.user import UserSerializer, UserUpdateSerializer
 from apiapp.utils.jsonreader import JsonReader
 from apiapp.security.voters import UserVoter
 
@@ -30,7 +30,7 @@ def api_user_detail(request, pk):
 
     elif request.method == 'PUT':
         data = JsonReader.read_body(request)
-        serializer = UserSettingsSerializer(user_inst, data=data)
+        serializer = UserUpdateSerializer(user_inst, data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

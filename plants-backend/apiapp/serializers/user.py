@@ -53,7 +53,7 @@ class UserSerializer(serializers.Serializer):
         return instance
 
 
-class UserSettingsSerializer(serializers.Serializer):
+class UserUpdateSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     username = serializers.CharField(required=False, allow_blank=False, max_length=100, validators=[
         UniqueValidator(queryset=User.objects.all())
