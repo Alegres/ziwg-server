@@ -42,7 +42,7 @@ def api_preset_detail(request, pk):
         try:
             plantation = Plantation.objects.get(
             id_preset=preset_id)
-        except PlantationPreset.DoesNotExist:
+        except Plantation.DoesNotExist:
             preset_id.delete()
             return Response(status=status.HTTP_200_OK)
         return Response({'error': 'Preset is being used by a plantation'},status=status.HTTP_403_FORBIDDEN)
