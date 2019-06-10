@@ -11,7 +11,7 @@ class PlantationMeasurementsSerializer(serializers.Serializer):
     temp = serializers.FloatField(required=True)
     soil = serializers.FloatField(required=True)
     humidity = serializers.FloatField(required=True)
-    data_ins = serializers.DateTimeField(required=False)
+    data_ins = serializers.TimeField(required=False)
 
     def create(self, data):
         """

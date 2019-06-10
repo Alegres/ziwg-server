@@ -52,6 +52,7 @@ def api_admin_measurement_index(request):
   #      return Response({'error': "Plant API is not allowed by non admin user"}, status=status.HTTP_403_FORBIDDEN)
 
     if request.method == 'GET':
+
         serializer = PlantationMeasurementsSerializer(
             PlantationMeasurements.objects.all(), many=True)
         return Response(serializer.data)
