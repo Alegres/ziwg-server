@@ -4,8 +4,7 @@
     "pk": 1,
     "fields": {
       "id_plantation": "1",
-      "id_arduino": "1",
-      "secret_code": "30"
+      "id_arduino": "1"
     }
   },
   {
@@ -13,9 +12,7 @@
     "pk": 2,
     "fields": {
       "id_plantation": "2",
-      "id_arduino": "2",
-        "secret_code": "20"
-
+      "id_arduino": "2"
     }
   }
 
