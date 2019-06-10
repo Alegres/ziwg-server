@@ -11,14 +11,14 @@ class PlantationMeasurementsSerializer(serializers.Serializer):
     temp = serializers.FloatField(required=True)
     soil = serializers.FloatField(required=True)
     humidity = serializers.FloatField(required=True)
-    data_ins = serializers.DateField(required=False)
+    data_ins = serializers.DateTimeField(required=False)
 
     def create(self, data):
         """
         Create and return a new `PlantationAvg` instance, given the validated data.
         """
         instance = PlantationMeasurements.objects.create(
-            data_ins=date.today(),
+         #   data_ins=date.today(),
             id_plantation=data.get('id_plantation'),
             soil=data.get('soil'),
             temp=data.get('temp'),
