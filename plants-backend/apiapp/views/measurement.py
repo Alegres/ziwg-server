@@ -58,15 +58,15 @@ def api_admin_measurement_index(request):
 
     elif request.method == 'POST':
         data = JsonReader.read_body(request)
-        print(data)
         try:
             plantation2arduino = Plantation2Arduino.objects.get(
                 id_arduino=data['id_arduino'])
         except Plantation2Arduino.DoesNotExist:
             return Response("Arduino not found", status=status.HTTP_404_NOT_FOUND)
 
-        data['id_plantation'] = plantation2arduino.id_plantation.id
-        serializer = PlantationMeasurementsSerializer(data=data)
+        data_copy = data.copy()
+        data_copy['id_plantation'] = plantation2arduino.id_plantation.id
+        serializer = PlantationMeasurementsSerializer(data=data_copy)
         if serializer.is_valid():
             print("is_valid = 1")
             serializer.save()
