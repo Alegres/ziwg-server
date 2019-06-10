@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from apiapp.models import PlantationMeasurements
 from apiapp.models import Plantation
+from datetime import date
+
 
 class PlantationMeasurementsSerializer(serializers.Serializer):
     id_plantation = serializers.PrimaryKeyRelatedField(
@@ -9,19 +11,19 @@ class PlantationMeasurementsSerializer(serializers.Serializer):
     temp = serializers.FloatField(required=True)
     soil = serializers.FloatField(required=True)
     humidity = serializers.FloatField(required=True)
-    data_ins = serializers.DateField()
+    data_ins = serializers.DateField(required=False)
 
     def create(self, data):
         """
         Create and return a new `PlantationAvg` instance, given the validated data.
         """
         instance = PlantationMeasurements.objects.create(
-            data_ins=data.get('data_ins'),
+            data_ins=date.today(),
             id_plantation=data.get('id_plantation'),
             soil=data.get('soil'),
             temp=data.get('temp'),
             humidity=data.get('humidity'),
-                )
+        )
         instance.save()
         return instance
 
@@ -30,7 +32,8 @@ class PlantationMeasurementsSerializer(serializers.Serializer):
         Update and return an existing `PlantationAvg` instance, given the validated data.
         """
         instance.data_ins = data.get('data_ins', instance.data_ins)
-        instance.id_plantation = data.get('id_plantation', instance.id_plantation)
+        instance.id_plantation = data.get(
+            'id_plantation', instance.id_plantation)
         instance.soil = data.get(
             'soil', instance.soil)
         instance.temp = data.get(
