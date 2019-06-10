@@ -58,7 +58,7 @@ def api_admin_measurement_index(request):
 
     elif request.method == 'POST':
         data = JsonReader.read_body(request)
-
+        print(data)
         try:
             plantation2arduino = Plantation2Arduino.objects.get(
                 id_arduino=data['id_arduino'])
