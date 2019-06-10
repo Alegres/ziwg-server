@@ -68,7 +68,6 @@ def api_admin_measurement_index(request):
         data_copy['id_plantation'] = plantation2arduino.id_plantation.id
         serializer = PlantationMeasurementsSerializer(data=data_copy)
         if serializer.is_valid():
-            print("is_valid = 1")
             serializer.save()
             changeAvg(serializer.data['id_plantation'])
             if not checkIfMeasurementsAreOk(serializer.data):
@@ -102,12 +101,7 @@ def changeAvg(idPlantation):
     sumHumidity = sumHumidity/(measurements.count())
     sumTmp = sumTmp/(measurements.count())
     sumSoil = sumSoil/(measurements.count())
-    print(sumHumidity)
-    print(sumSoil)
-    print(sumTmp)
-    print(measurements.count())
 
-    print(not avg)
     if not avg:
         newAvg = PlantationAvg(id_plantation=idPlantation,
                                temp=sumTmp, soil=sumSoil, humidity=sumHumidity)
