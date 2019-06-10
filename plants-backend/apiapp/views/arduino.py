@@ -18,7 +18,7 @@ def arduino_data(request, pk):
 
     try:
         plantation2Arduino = Plantation2Arduino.objects.get(id_arduino=pk)
-    except Plantation.DoesNotExist:
+    except Plantation2Arduino.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':

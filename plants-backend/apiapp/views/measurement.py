@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from apiapp.models import PlantationMeasurements
 from apiapp.models import PlantationPreset
-from apiapp.models import Plantation, PlantationAvg
+from apiapp.models import Plantation, PlantationAvg, Plantation2Arduino
 from apiapp.serializers.measurement import PlantationMeasurementsSerializer
 from apiapp.utils.jsonreader import JsonReader
 from apiapp.security.voters import UserVoter
@@ -58,6 +58,14 @@ def api_admin_measurement_index(request):
 
     elif request.method == 'POST':
         data = JsonReader.read_body(request)
+
+        try:
+            plantation2arduino = Plantation2Arduino.objects.get(
+                id_arduino=data['id_arduino'])
+        except Plantation2Arduino.DoesNotExist:
+            return Response("Arduino not found", status=status.HTTP_404_NOT_FOUND)
+
+        data['id_plantation'] = plantation2arduino.id_plantation.id
         serializer = PlantationMeasurementsSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
