@@ -68,6 +68,7 @@ def api_admin_measurement_index(request):
         data['id_plantation'] = plantation2arduino.id_plantation.id
         serializer = PlantationMeasurementsSerializer(data=data)
         if serializer.is_valid():
+            print("is_valid = 1")
             serializer.save()
             changeAvg(serializer.data['id_plantation'])
             if not checkIfMeasurementsAreOk(serializer.data):
