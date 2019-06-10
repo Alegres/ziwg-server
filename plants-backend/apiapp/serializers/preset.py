@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from apiapp.models import PlantationPreset, User
-from datetime import date
-
+import time
+from datetime import datetime
 
 class PresetSerializer(serializers.Serializer):
     id_user = serializers.PrimaryKeyRelatedField(
@@ -34,7 +34,7 @@ class PresetSerializer(serializers.Serializer):
             min_temp=data.get('min_temp'),
             max_temp=data.get('max_temp'),
             min_soil=data.get('min_soil'),
-            data_ins=date.fromtimestamp(),
+            data_ins=datetime.now(),
             max_soil=data.get('max_soil'),
             min_humidity=data.get('min_humidity'),
             max_humidity=data.get('max_humidity'),

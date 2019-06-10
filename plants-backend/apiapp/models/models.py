@@ -3,7 +3,7 @@ from .user import User
 from django.db.models.signals import post_save
 from apiapp.utils.hash import please_create_hash
 from django.dispatch import receiver
-
+from django.utils import timezone
 
 class PlantationPreset(models.Model):
     id = models.AutoField(primary_key=True)
@@ -12,7 +12,7 @@ class PlantationPreset(models.Model):
     how_often_to_water = models.IntegerField(blank=True, null=True)
     expected_growth = models.IntegerField(blank=True, null=True)
     how_long_to_water = models.IntegerField(blank=True, null=True)
-    data_ins = models.TimeField()
+    data_ins = models.DateTimeField(null=True, blank=True)
     min_temp = models.FloatField(blank=True, null=True)
     max_temp = models.FloatField(blank=True, null=True)
     min_soil = models.FloatField(blank=True, null=True)
@@ -39,7 +39,7 @@ class PlantationMeasurements(models.Model):
     temp = models.FloatField(blank=True, null=True)
     soil = models.FloatField(blank=True, null=True)
     humidity = models.FloatField(blank=True, null=True)
-    data_ins = models.TimeField(null=True)
+    data_ins =  models.DateTimeField(null=True, blank=True)
 
 
 class PlantationAvg(models.Model):
