@@ -21,6 +21,7 @@ class PlantationMeasurementsSerializer(serializers.Serializer):
          #   data_ins=date.today(),
             id_plantation=data.get('id_plantation'),
             soil=data.get('soil'),
+            data_ins=date.fromtimestamp(),
             temp=data.get('temp'),
             humidity=data.get('humidity'),
         )
