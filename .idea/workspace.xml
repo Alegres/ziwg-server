@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="475a4b0f-f564-4e4b-b3c9-9c7b105b8a8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/plants-backend/apiskeleton/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiskeleton/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plants-backend/apiapp/serializers/preset.py" beforeDir="false" afterPath="$PROJECT_DIR$/plants-backend/apiapp/serializers/preset.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/serializers/preset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1473">
-              <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+            <state relative-caret-position="303">
+              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -51,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plants-backend/apiskeleton/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+            <state relative-caret-position="1068">
+              <caret line="122" selection-start-line="122" selection-end-line="122" />
               <folding>
                 <element signature="e#313#322#0" expanded="true" />
               </folding>
@@ -219,8 +219,8 @@
         <option value="$PROJECT_DIR$/plants-backend/apiapp/views/measurement.py" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/serializers/measurement.py" />
         <option value="$PROJECT_DIR$/plants-backend/apiapp/models/models.py" />
-        <option value="$PROJECT_DIR$/plants-backend/apiapp/serializers/preset.py" />
         <option value="$PROJECT_DIR$/plants-backend/apiskeleton/settings.py" />
+        <option value="$PROJECT_DIR$/plants-backend/apiapp/serializers/preset.py" />
       </list>
     </option>
   </component>
@@ -428,18 +428,18 @@
       <workItem from="1560197612828" duration="1555000" />
       <workItem from="1560202737748" duration="225000" />
       <workItem from="1560206186834" duration="2033000" />
-      <workItem from="1560259356143" duration="2434000" />
+      <workItem from="1560259356143" duration="2900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46513000" />
+    <option name="totallyTimeSpent" value="46979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="995" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19316968" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19316968" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -451,7 +451,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.3290993" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.3290993" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" weight="0.32912844" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -849,22 +849,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/serializers/preset.py">
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiskeleton/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1473">
-          <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+        <state relative-caret-position="1068">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#313#322#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plants-backend/apiskeleton/settings.py">
+    <entry file="file://$PROJECT_DIR$/plants-backend/apiapp/serializers/preset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+        <state relative-caret-position="303">
+          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
           <folding>
-            <element signature="e#313#322#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

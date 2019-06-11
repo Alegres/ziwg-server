@@ -74,7 +74,7 @@ class PresetUpdateSerializer(serializers.Serializer):
     how_long_to_water = serializers.IntegerField(required=False)
     how_often_to_water = serializers.IntegerField(required=False)
     expected_growth = serializers.IntegerField(required=False)
-    data_ins = serializers.DateField(required=False)
+    data_ins = serializers.DateTimeField(required=False)
     min_temp = serializers.FloatField(required=False)
     max_temp = serializers.FloatField(required=False)
     min_soil = serializers.FloatField(required=False)
