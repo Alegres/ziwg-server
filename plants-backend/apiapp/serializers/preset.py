@@ -12,7 +12,7 @@ class PresetSerializer(serializers.Serializer):
     how_long_to_water = serializers.IntegerField(required=True)
     how_often_to_water = serializers.IntegerField(required=True)
     expected_growth = serializers.IntegerField(required=False)
-    data_ins = serializers.TimeField(required=False)
+    data_ins = serializers.DateTimeField(required=False)
     min_temp = serializers.FloatField(required=True)
     max_temp = serializers.FloatField(required=True)
     min_soil = serializers.FloatField(required=True)
