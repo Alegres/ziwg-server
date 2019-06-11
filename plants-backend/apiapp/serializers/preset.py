@@ -101,5 +101,6 @@ class PresetUpdateSerializer(serializers.Serializer):
         instance.min_humidity = data.get('min_humidity', instance.min_humidity)
         instance.max_humidity = data.get('max_humidity', instance.max_humidity)
         instance.color = data.get('color', instance.color)
+        instance.data_ins = datetime.now(),
         instance.save()
         return instance
