@@ -2,17 +2,6 @@ from rest_framework import serializers
 from apiapp.models import PlantationPreset, User
 import time
 from datetime import datetime
-from django.utils import timezone
-class CustomDateTimeField(serializers.DateTimeField):
-    def to_representation(self, value):
-        tz = timezone.get_default_timezone()
-        # timezone.localtime() defaults to the current tz, you only
-        # need the `tz` arg if the current tz != default tz
-        value = timezone.localtime(value, timezone=tz)
-        # py3 notation below, for py2 do:
-        # return super(CustomDateTimeField, self).to_representation(value)
-        return super().to_representation(value)
-
 
 class PresetSerializer(serializers.Serializer):
     id_user = serializers.PrimaryKeyRelatedField(
@@ -23,7 +12,7 @@ class PresetSerializer(serializers.Serializer):
     how_long_to_water = serializers.IntegerField(required=True)
     how_often_to_water = serializers.IntegerField(required=True)
     expected_growth = serializers.IntegerField(required=False)
-    data_ins = serializers.CustomDateTimeField(required=False)
+    data_ins = serializers.DateTimeField(required=False)
     min_temp = serializers.FloatField(required=True)
     max_temp = serializers.FloatField(required=True)
     min_soil = serializers.FloatField(required=True)
