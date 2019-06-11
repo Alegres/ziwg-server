@@ -77,13 +77,13 @@ def api_admin_plant_index(request):
         if serializer.is_valid():
             instance = serializer.save()
 
-        try:
-            data2 = {"id_user": voter.get_id(), "id_plantation": instance.id}
-            serializer2 = User2PlantationSerializer(data=data2)
-            serializer2.is_valid(raise_exception=True)
-            serializer2.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        except:
-            instance.delete()
+            try:
+                data2 = {"id_user": voter.get_id(), "id_plantation": instance.id}
+                serializer2 = User2PlantationSerializer(data=data2)
+                serializer2.is_valid(raise_exception=True)
+                serializer2.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except:
+                instance.delete()
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
